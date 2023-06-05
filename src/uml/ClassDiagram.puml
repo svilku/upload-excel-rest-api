@@ -1,0 +1,24 @@
+@startuml
+
+class UploadResource
+class UploadService
+class EmployeeRepository
+interface PanacheRepositoryBase
+
+UploadResource --> UploadService
+UploadService --> EmployeeRepository
+PanacheRepositoryBase <|-- EmployeeRepository
+
+class UploadResource {
++String uploadFile()
+}
+
+class UploadService {
++UploadResponse uploadExcelFile()
+}
+
+class EmployeeRepository {
++UploadResponse saveEmployeeData()
+}
+
+@enduml
